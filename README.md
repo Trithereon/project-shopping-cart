@@ -1,48 +1,20 @@
-# Project: CV Application
+# Project: Shopping Cart
 
 from The Odin Project
 
 ## Assignment
 
-> **Note:** While working on this project, you might notice that some parts of your code execute twice (e.g., console logs appearing doubled). This is due to [React.StrictMode](https://react.dev/reference/react/StrictMode) and is intended behavior. We will go through this more in the next lesson, so don’t worry about it for now.
-
 1. Create a new React project.
-2. Think about how to structure your application into components. Your application should include:
-   1. A section to add general information like name, email and phone number.
-   2. A section to add your educational experience (school name, title of study and date of study)
-   3. A section to add practical experience (company name, position title, main responsibilities of your jobs, date from and until when you worked for that company)
-3. Be sure to include an edit and submit button for each section or for the whole CV. The submit button should submit your form and display the value of your input fields in HTML elements. The edit button should add back (display) the input fields, with the previously displayed information as values. In those input fields, you should be able to edit and resubmit the content. You’re going to make heavy use of state and props, so make sure you understood those concepts.
-4. Create a `components` directory under your `src` directory and add your components.
-5. Include a `styles` directory under your `src` directory for your CSS files. You’ll need to import these in the component files to use them.
-6. Push the results and deploy them with any of the options mentioned below. At this point of the curriculum, it doesn’t matter which platform you choose as long as your project is live on the internet!
+2. Think about the component and the folder structure. How could you set up your application? Which components or functionalities do you need? It’s a good idea to note this down somewhere you can easily get to and refer back and add to it to keep track.
+3. You should have three pages: a home page, a shop page, and a cart page. Let the user navigate between the pages with a navigation bar, which will be shown on all pages.
+4. To your homepage, you can add whatever you’d like! A few images or information will be totally fine; it doesn’t have to be something fancy - it’s to test the concepts taught thus far.
+5. On the shop page, build individual card elements for each of your products. Display an input field on it, which lets a user manually type in how many items they want to buy. Also, add an increment and decrement button next to it for fine-tuning. You can also display a title for each product as well as an “Add To Cart” button.
+6. When there are items in your cart, the cart page link in the navbar should indicate how many items are in your cart. This should update in real time as the user adds or removes items from their cart.
+7. On the cart page, you should display the items and their quantities, and allow users to increase/decrease the quantity of items in their cart (including removal if appropriate). There’s no need to implement any checkout/payment system.
+8. Fetch your shop items from FakeStore API or something similar.
+9. Make sure to test your app thoroughly using the React Testing Library. Be careful not to test react-router directly, since it is an external library and the developers working on it must have tested the library already.
+10. As usual, style your application so you can show it off! You have a host of options provided already.
+11. Lastly, it’s time to deploy it! Depending on what hosting solution you’re using, you may need some additional configuration so that your routing is handled correctly as a single page application (SPA).
+    **Netlify**: You need to add a \_redirects file to the public/ directory of your project. Copy the following to redirect all routes to the index page and let react-router handle the rest. You can read more about this at the Netlify documentation on redirects.
 
-### Deploying a React app
-
-While we have been using GitHub Pages to deploy our **static webpages** till now, and we can definitely continue to do so with hacky ways, it’s far easier to let a PaaS (Platform as a Service) do the same for us! There are a lot of options to host such sites, and the [Vite hosting docs](https://vitejs.dev/guide/static-deploy.html) go over the most popular ones among them.
-
-Not only do some of these get rid of additional steps after pushing our code to GitHub as these services have tools that automatically _deploy on push_, but you also don’t have to worry about other issues further down the curriculum, like routers and build steps. We shall use a few selected options for now. Once you are done with the assignment, choose one of the following options, and deploy!
-
-### Netlify
-
-While there are many ways to deploy to [Netlify](https://www.netlify.com/) ([Netlify documentation](https://docs.netlify.com/)), like uploading your `dist` directly or using `netlify-cli`, the most convenient way would be to directly import your GitHub repository to Netlify.
-
-1. Push your React application to GitHub.
-2. [Import your project to Netlify](https://app.netlify.com/start) by logging in, and selecting your repository.
-3. Select the branch to deploy from (the default setting, from `main`, works) and hit “Deploy site”!
-4. You can access more settings here if you need to!
-
-### Vercel
-
-Similar to Netlify, [Vercel](https://www.vercel.com/) ([Vercel documentation](https://www.vercel.com/docs)) also offers a few ways to deploy, and we will also be importing our GitHub repository to get benefits like deploy-on-push.
-
-1. Again, push your React application to GitHub.
-2. [Import your project to Vercel](https://vercel.com/new).
-3. Vercel will automatically detect that you are using Vite. Set your name as you like, and hit “Deploy”!
-
-### Cloudflare Pages
-
-[Cloudflare Pages](https://pages.cloudflare.com/) ([Cloudflare Pages documentation](https://developers.cloudflare.com/pages)) has a similar process and benefits to the other two options: import your GitHub repository and set the right build command and output directory.
-
-1. Yes, push your React application to GitHub.
-2. [Import your project to Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/deploy-a-vite3-project/#:~:text=To%20deploy%20your%20site%20to%20Pages). Make sure when creating an application that you create with Pages instead of creating a Worker.
-3. Hit “Save and Deploy” and watch it come to life!
+`/* /index.html 200`
