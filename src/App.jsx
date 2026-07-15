@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./styles/app.css";
 
 function App() {
-  return <></>;
+  return <div></div>;
 }
 
 export default App;
