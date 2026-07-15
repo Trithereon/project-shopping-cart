@@ -15,6 +15,7 @@ from The Odin Project
 9. Make sure to test your app thoroughly using the React Testing Library. Be careful not to test react-router directly, since it is an external library and the developers working on it must have tested the library already.
 10. As usual, style your application so you can show it off! You have a host of options provided already.
 11. Lastly, it’s time to deploy it! Depending on what hosting solution you’re using, you may need some additional configuration so that your routing is handled correctly as a single page application (SPA).
-    **Netlify**: You need to add a \_redirects file to the public/ directory of your project. Copy the following to redirect all routes to the index page and let react-router handle the rest. You can read more about this at the Netlify documentation on redirects.
+
+**Netlify**: You need to add a \_redirects file to the public/ directory of your project. Copy the following to redirect all routes to the index page and let react-router handle the rest. You can read more about this at the Netlify documentation on redirects.
 
 `/* /index.html 200`
