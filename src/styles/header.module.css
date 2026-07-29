@@ -3,7 +3,8 @@
   --btn-text: #976945;
   display: flex;
   background: var(--header-bg);
-  height: 200px;
+  height: 140px;
+  width: 100%;
 }
 
 .headerLogo img {
@@ -30,6 +31,7 @@
   display: flex;
   list-style: none;
   gap: 16px;
+  height: inherit;
 }
 
 .headerActions button {
@@ -51,8 +53,11 @@
   color: var(--header-bg);
 }
 
-.line {
-  align-self: center;
-  height: 65%;
-  border-left: #97694559 1px solid;
+/* Dividing line gets added only on small viewports. */
+@media (max-width: 1024px) {
+  .line {
+    align-self: center;
+    height: 65%;
+    border-left: #97694559 1px solid;
+  }
 }
