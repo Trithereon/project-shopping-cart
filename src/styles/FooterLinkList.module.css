@@ -1,0 +1,16 @@
+.footerLinkList ul {
+  padding: 0;
+  margin-top: 0;
+}
+
+.link {
+  text-decoration: none;
+  list-style: none;
+  text-align: left;
+  color: var(--text);
+  transition: color 500ms;
+}
+
+.link:hover {
+  color: var(--header-bg);
+}

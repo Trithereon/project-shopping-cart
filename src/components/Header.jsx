@@ -1,4 +1,4 @@
-import styles from "../styles/header.module.css";
+import styles from "../styles/Header.module.css";
 import logo from "../assets/img/logo.png";
 
 function Header() {
@@ -12,7 +12,7 @@ function Header() {
         <span>Sainte-Anne-de-la-Rochelle, QC</span>
       </div>
       <div className={styles.line}></div>
-      <div className={styles.headerActions}>
+      <nav className={styles.headerActions}>
         <ul>
           <li>
             <button onClick={() => alert("Clicked Home")}>Home</button>
@@ -24,7 +24,7 @@ function Header() {
             <button onClick={() => alert("Clicked Cart")}>Cart</button>
           </li>
         </ul>
-      </div>
+      </nav>
     </header>
   );
 }

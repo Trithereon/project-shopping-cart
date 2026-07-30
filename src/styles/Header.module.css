@@ -1,10 +1,11 @@
 .header {
-  --header-bg: #f9fcf1;
   --btn-text: #976945;
   display: flex;
   background: var(--header-bg);
   height: 140px;
   width: 100%;
+  position: sticky;
+  top: 0;
 }
 
 .headerLogo img {

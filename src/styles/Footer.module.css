@@ -1,0 +1,76 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px;
+  width: 100%;
+  background: var(--footer-bg);
+  text-align: left;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.footerContent h2 {
+  margin-bottom: 0.4em;
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter label {
+  margin-bottom: 8px;
+}
+
+.newsEmail {
+  padding: 10px;
+  max-width: 200px;
+}
+
+.newsSignUpBtn {
+  width: 90px;
+  padding: 10px;
+  margin-left: 8px;
+}
+
+.lineDivider {
+  width: 80%;
+  border-top: 1px solid rgb(165, 165, 165);
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 0.83em;
+  color: #607d8b;
+}
+
+.copyright a {
+  text-decoration: none;
+  color: #607d8b;
+}
+
+.flag {
+  width: 26px;
+}
+
+.githubLink {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  transition: color 800ms;
+}
+
+a.githubLink:hover {
+  color: var(--header-bg);
+}
+
+.githubLogo {
+  width: 20px;
+}
