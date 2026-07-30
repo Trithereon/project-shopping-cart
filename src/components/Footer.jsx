@@ -36,6 +36,8 @@ function Footer() {
               name="newsEmail"
               type="email"
               placeholder="Enter your email"
+              required
+              disabled={isSignedUp ? true : false}
             />
             <button type="submit" className={styles.newsSignUpBtn}>
               {isSignedUp ? "Signed up!" : "Sign up"}
