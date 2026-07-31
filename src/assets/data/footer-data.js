@@ -1,5 +1,5 @@
 const aboutUsLinks = [
-  { listTitle: "About Us" },
+  { listTitle: "About us" },
   { title: "Visit the farm", url: "#" },
   { title: "Contact us", url: "#" },
   { title: "Join the team", url: "#" },

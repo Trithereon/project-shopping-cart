@@ -1,0 +1,89 @@
+.imgCarousel {
+  display: grid;
+  grid-template-rows: 1080px 1fr;
+  grid-template-areas:
+    "slides"
+    "navDots";
+  width: 100%;
+  justify-self: center;
+  background: var(--text-h);
+  position: relative;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  grid-area: slides;
+  transition: opacity 600ms;
+  position: absolute;
+  inset: 0;
+}
+
+.slide.visible {
+  opacity: 1;
+}
+
+.slideContent {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 3rem;
+  font-size: 30px;
+  text-shadow: 2px 2px 2px black;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 400ms;
+}
+
+.prev:hover,
+.next:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.navDotContainer {
+  display: flex;
+  justify-content: center;
+  grid-area: navDots;
+  gap: 0.4rem;
+  padding-top: 0.2rem;
+  background-color: var(--header-bg);
+  padding-bottom: 20px;
+}
+
+.navDot {
+  box-shadow: 1px 1px 2px rgb(150, 150, 150);
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.navDot:hover {
+  background-color: rgb(94, 94, 94);
+}
+
+.navDot:active {
+  background-color: rgb(150, 150, 150);
+}
+
+.navDot.selected {
+  background-color: rgb(43, 43, 43);
+}

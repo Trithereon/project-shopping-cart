@@ -2,12 +2,13 @@ import { useState } from "react";
 import "./styles/app.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Home from "./components/Home";
 
 function App() {
   return (
     <>
       <Header />
-      <div className="bigDiv"></div>
+      <Home />
       <Footer />
     </>
   );

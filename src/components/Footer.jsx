@@ -39,8 +39,12 @@ function Footer() {
               required
               disabled={isSignedUp ? true : false}
             />
-            <button type="submit" className={styles.newsSignUpBtn}>
-              {isSignedUp ? "Signed up!" : "Sign up"}
+            <button
+              type="submit"
+              className={styles.newsSignUpBtn}
+              disabled={isSignedUp ? true : false}
+            >
+              {isSignedUp ? "Signed up! ✔️" : "Sign up"}
             </button>
           </form>
         </div>

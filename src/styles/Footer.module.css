@@ -33,7 +33,7 @@
 }
 
 .newsSignUpBtn {
-  width: 90px;
+  max-width: 110px;
   padding: 10px;
   margin-left: 8px;
 }

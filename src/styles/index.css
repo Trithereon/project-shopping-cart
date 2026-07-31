@@ -26,12 +26,13 @@
 
 body {
   margin: 0;
+  background-color: #2c2c2c;
 }
 
 #root {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  max-width: 100%;
+  max-width: 1920px; /* The width of the hero image */
   margin: 0 auto;
   text-align: center;
   min-height: 100svh;
