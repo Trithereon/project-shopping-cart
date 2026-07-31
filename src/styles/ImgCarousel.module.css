@@ -13,11 +13,7 @@
 .slide {
   display: flex;
   justify-content: center;
-  /* opacity: 0; */
   grid-area: slides;
-  /* transition:
-    opacity 600ms,
-    transform 4000ms linear; */
   position: absolute;
   inset: 0;
   overflow: hidden;
@@ -32,13 +28,13 @@
 
 .slideContent.visible {
   animation:
-    fadeIn 1s linear forwards,
+    fadeIn 600ms linear forwards,
     zoom 5s linear forwards;
 }
 
 @keyframes fadeIn {
   from {
-    opacity: 0.5;
+    opacity: 0.3;
   }
   to {
     opacity: 1;
@@ -102,7 +98,7 @@
 }
 
 .navDot:hover {
-  background-color: rgb(94, 94, 94);
+  background-color: rgb(60, 60, 60);
 }
 
 .navDot:active {

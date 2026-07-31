@@ -21,6 +21,34 @@ function Home() {
     <main>
       <div className={styles.hero}>
         <ImgCarousel images={images} />
+        <div className={styles.benefitsContainer}>
+          <div className={styles.benefit}>
+            <h2>Weekly delivery</h2>
+          </div>
+          <div className={styles.benefit}>
+            <h2>Artisanal quality</h2>
+          </div>
+          <div className={styles.benefit}>
+            <h2>Responsible agriculture</h2>
+          </div>
+        </div>
+        <div className={styles.callToActionContainer}>
+          <div className={styles.arrowRight}></div>
+          <div className={styles.callToAction}>
+            <h3>
+              Visit our online shop to order fresh produce delivered to your
+              door.
+            </h3>
+            <h3>Deliveries are made every Monday from 5PM to 8PM.</h3>
+            <button
+              className={styles.shopBtn}
+              onClick={() => alert("Clicked Order Now!")}
+            >
+              Order Now
+            </button>
+          </div>
+          <div className={styles.arrowLeft}></div>
+        </div>
       </div>
     </main>
   );

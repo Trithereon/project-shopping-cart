@@ -1,7 +1,85 @@
-.hero {
+.benefitsContainer {
+  display: flex;
+  background-color: var(--header-bg);
+  justify-content: center;
+  gap: 20px;
+  padding: 180px 0;
 }
 
-.heroImg {
-  max-width: 100%;
-  height: auto;
+.benefit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+
+  /* Egg shape. */
+  aspect-ratio: 4/3;
+  border-radius: 60% 40% 40% 60% / 50% 50% 50% 50%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #ffffff 0%,
+    #ffeedd 25%,
+    #e2bca2 75%,
+    #bfa08a 100%
+  );
+  filter: drop-shadow(0 20px 15px rgba(0, 0, 0, 0.2));
+}
+
+.callToActionContainer {
+  display: flex;
+  justify-content: center;
+  background-color: #976945;
+  width: 100%;
+}
+
+.callToAction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 180px 0;
+  background-color: var(--header-bg);
+  width: 70%;
+}
+
+.arrowRight {
+  background-color: var(--header-bg);
+  width: 0;
+  height: 0;
+  border-top: 302px solid transparent;
+  border-left: 100px solid #976945;
+  border-bottom: 302px solid transparent;
+}
+
+.arrowLeft {
+  background-color: var(--header-bg);
+  width: 0;
+  height: 0;
+  border-top: 302px solid transparent;
+  border-right: 100px solid #976945;
+  border-bottom: 302px solid transparent;
+}
+
+.shopBtn {
+  padding: 8px 10px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #976945;
+  border: none;
+  color: var(--header-bg);
+  font-size: 20px;
+  font-weight: 600;
+  transition: background-color 800ms;
+  width: 200px;
+  padding: 30px 0;
+  margin: 1em 0;
+  box-shadow: 0 0 6px var(--text-h);
+}
+
+.shopBtn:hover {
+  background-color: var(--text-h);
+}
+
+.shopBtn:active {
+  transform: scale(102%);
 }
