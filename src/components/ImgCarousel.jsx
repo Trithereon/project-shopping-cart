@@ -1,9 +1,10 @@
 import styles from "../styles/ImgCarousel.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function ImgCarousel({ images }) {
   const [selectedImg, setSelectedImg] = useState(0);
   const arrLength = Object.values(images).length;
+  const SLIDE_DURATION = 4000; // Sync with transform timing in css module.
 
   function handlePrev() {
     setSelectedImg((prevState) => {
@@ -19,6 +20,12 @@ function ImgCarousel({ images }) {
     });
   }
 
+  // Autoplay. Timer resets every time selectedImg changes.
+  useEffect(() => {
+    const timer = setInterval(handleNext, SLIDE_DURATION);
+    return () => clearInterval(timer);
+  }, [selectedImg]);
+
   return (
     <div className={styles.imgCarousel}>
       <button className={styles.prev} onClick={handlePrev}>
@@ -29,11 +36,12 @@ function ImgCarousel({ images }) {
         // Takes src, splits into an array, keeps only the last value, e.g. "hens.jpg"
         const filename = src.split("/").pop();
         return (
-          <div
-            key={src}
-            className={`${styles.slide} ${index === selectedImg ? styles.visible : ""}`}
-          >
-            <img src={src} alt={filename} className={styles.slideContent} />
+          <div key={src} className={styles.slide}>
+            <img
+              src={src}
+              alt={filename}
+              className={`${styles.slideContent} ${index === selectedImg ? styles.visible : ""}`}
+            />
           </div>
         );
       })}
