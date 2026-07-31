@@ -1,5 +1,8 @@
 import styles from "../styles/Home.module.css";
 import ImgCarousel from "../components/ImgCarousel.jsx";
+import mesclun from "../assets/img/call-to-action/mesclun-mix.jpg";
+import strawberries from "../assets/img/call-to-action/strawberries.jpg";
+import eggs from "../assets/img/call-to-action/eggs.jpg";
 
 function Home() {
   // Import folder of images
@@ -32,23 +35,27 @@ function Home() {
             <h2>Responsible agriculture</h2>
           </div>
         </div>
-        <div className={styles.callToActionContainer}>
-          <div className={styles.arrowRight}></div>
-          <div className={styles.callToAction}>
-            <h3>
-              Visit our online shop to order fresh produce delivered to your
-              door.
-            </h3>
-            <h3>Deliveries are made every Monday from 5PM to 8PM.</h3>
-            <button
-              className={styles.shopBtn}
-              onClick={() => alert("Clicked Order Now!")}
-            >
-              Order Now
-            </button>
+      </div>
+      <div className={styles.callToActionContainer}>
+        <div className={styles.arrowRight}></div>
+        <div className={styles.callToAction}>
+          <div className={styles.ctaImgContainer}>
+            <img src={strawberries} alt="strawberries" />
+            <img src={eggs} alt="eggs" />
+            <img src={mesclun} alt="mesclun salad mix" />
           </div>
-          <div className={styles.arrowLeft}></div>
+          <h3>
+            Visit our online shop to order fresh produce delivered to your door.
+          </h3>
+          <h3>Deliveries are made every Monday from 5PM to 8PM.</h3>
+          <button
+            className={styles.shopBtn}
+            onClick={() => alert("Clicked Order Now!")}
+          >
+            Order Now
+          </button>
         </div>
+        <div className={styles.arrowLeft}></div>
       </div>
     </main>
   );

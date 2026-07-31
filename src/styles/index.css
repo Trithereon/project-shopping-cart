@@ -33,6 +33,7 @@ body {
   text-align: center;
   min-height: 100svh;
   box-sizing: border-box;
+  background-color: var(--header-bg);
 }
 
 h1,
