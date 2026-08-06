@@ -1,5 +1,6 @@
 import styles from "../styles/Header.module.css";
 import logo from "../assets/img/logo.png";
+import { Link } from "react-router";
 
 function Header() {
   return (
@@ -15,13 +16,19 @@ function Header() {
       <nav className={styles.headerActions}>
         <ul>
           <li>
-            <button onClick={() => alert("Clicked Home")}>Home</button>
+            <Link to="/" className={styles.navButton}>
+              Home
+            </Link>
           </li>
           <li>
-            <button onClick={() => alert("Clicked Shop")}>Shop</button>
+            <Link to="/shop" className={styles.navButton}>
+              Shop
+            </Link>
           </li>
           <li>
-            <button onClick={() => alert("Clicked Cart")}>Cart</button>
+            <Link to="/cart" className={styles.navButton}>
+              Cart
+            </Link>
           </li>
         </ul>
       </nav>

@@ -36,8 +36,10 @@
   height: inherit;
 }
 
-.headerActions button {
-  padding: 8px 10px 6px;
+.navButton {
+  vertical-align: center;
+  text-decoration: none;
+  padding: 6px 10px 8px;
   border-radius: 6px;
   cursor: pointer;
   background: none;
@@ -50,7 +52,7 @@
     color 1s;
 }
 
-.headerActions button:hover {
+.navButton:hover {
   background-color: var(--btn-text);
   color: var(--header-bg);
 }
