@@ -44,10 +44,15 @@ function Home() {
             <img src={eggs} alt="eggs" />
             <img src={mesclun} alt="mesclun salad mix" />
           </div>
-          <h3>
-            Visit our online shop to order fresh produce delivered to your door.
-          </h3>
-          <h3>Deliveries are made every Monday from 5PM to 8PM.</h3>
+          <div className={styles.ctaTextContainer}>
+            <h3 className={styles.ctaText}>
+              Visit our online shop to order fresh produce delivered to your
+              door.
+            </h3>
+            <h3 className={styles.ctaText}>
+              Deliveries are made every Monday from 5PM to 8PM.
+            </h3>
+          </div>
           <button
             className={styles.shopBtn}
             onClick={() => alert("Clicked Order Now!")}

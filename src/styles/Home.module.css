@@ -45,6 +45,15 @@
   width: 78%;
 }
 
+.ctaTextContainer {
+  width: 80%;
+}
+
+.ctaText {
+  color: var(--text-h);
+  z-index: 2;
+}
+
 .ctaImgContainer {
   display: flex;
   z-index: 2;
@@ -53,7 +62,7 @@
 .ctaImgContainer img {
   width: 200px;
   height: 200px;
-  margin: 0 20px 1em;
+  margin: 0 clamp(0px, 1vw - 10px, 20px) 1em;
 }
 
 .arrowRight {
