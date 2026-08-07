@@ -1,8 +1,8 @@
 import styles from "../styles/Home.module.css";
 import ImgCarousel from "../components/ImgCarousel.jsx";
-import mesclun from "../assets/img/call-to-action/mesclun-mix.jpg";
-import strawberries from "../assets/img/call-to-action/strawberries.jpg";
-import eggs from "../assets/img/call-to-action/eggs.jpg";
+import mesclun from "../assets/img/shop/mesclun-mix.jpg";
+import strawberries from "../assets/img/shop/strawberries.jpg";
+import eggs from "../assets/img/shop/eggs.jpg";
 
 function Home() {
   // Import folder of images

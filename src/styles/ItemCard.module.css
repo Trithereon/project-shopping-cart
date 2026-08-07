@@ -1,0 +1,46 @@
+.itemImageContainer {
+}
+
+.itemContent {
+}
+
+.itemActions {
+  display: grid;
+  grid-template-areas:
+    "quantity plus addToCart"
+    "quantity minus addToCart";
+}
+
+/* To remove spinners, arrows, from the number input.*/
+/* Chrome, Edge, Safari, Opera */
+.quantity::-webkit-outer-spin-button,
+::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+.quantity {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.quantity {
+  grid-area: quantity;
+}
+
+.plus,
+.minus {
+  width: 30px;
+}
+
+.plus {
+  grid-area: plus;
+}
+
+.minus {
+  grid-area: minus;
+}
+
+.addToCart {
+  grid-area: addToCart;
+}

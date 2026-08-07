@@ -10,8 +10,9 @@
 
 .footerContent {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  column-gap: 40px;
 }
 
 .footerContent h2 {
@@ -21,6 +22,7 @@
 .newsletter {
   display: flex;
   flex-direction: column;
+  min-width: 275px;
 }
 
 .newsletter label {
@@ -41,6 +43,7 @@
 .lineDivider {
   width: 80%;
   border-top: 1px solid rgb(165, 165, 165);
+  margin-top: 10px;
 }
 
 .copyright {

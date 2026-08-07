@@ -1,8 +1,11 @@
 .header {
   --btn-text: #976945;
+  --logo-height: 100px;
+
   display: flex;
+  flex-wrap: wrap;
   background: var(--header-bg);
-  height: 140px;
+  min-height: var(--logo-height);
   width: 100%;
   position: sticky;
   top: 0;
@@ -10,17 +13,22 @@
 }
 
 .headerLogo img {
-  max-height: 100%;
+  max-height: var(--logo-height);
 }
 
 .headerTitle {
   align-self: center;
+  text-align: left;
   color: var(--text-h);
   margin-right: 30px;
 }
 
 .headerTitle h1 {
   margin-top: 0;
+}
+
+.headerTitle address {
+  margin-left: 4px;
 }
 
 .headerActions {
@@ -57,11 +65,26 @@
   color: var(--header-bg);
 }
 
-/* Dividing line gets added only on small viewports. */
-@media (max-width: 1024px) {
-  .line {
-    align-self: center;
-    height: 65%;
-    border-left: #97694559 1px solid;
+.navButton.selected {
+  text-decoration: underline from-font;
+  text-underline-offset: 8px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    justify-content: center;
+  }
+  .headerActions {
+    margin-right: auto;
+  }
+  .headerActions ul {
+    padding: 0;
+  }
+  .headerTitle {
+    margin: 0;
+  }
+  .headerTitle address {
+    margin: 0;
+    text-align: center;
   }
 }
