@@ -14,23 +14,26 @@ function Shop() {
   }, []);
 
   return (
-    <div>
+    <main>
       <h2>Shop</h2>
-      {items &&
-        items.map((item) => {
-          return (
-            <ItemCard
-              key={item.title}
-              title={item.title}
-              price={item.price}
-              description={item.description}
-              category={item.category}
-              rating={item.rating}
-              imgSrc={item.image}
-            />
-          );
-        })}
-    </div>
+
+      <div className={styles.itemCardContainer}>
+        {items &&
+          items.map((item) => {
+            return (
+              <ItemCard
+                key={item.title}
+                title={item.title}
+                price={item.price}
+                description={item.description}
+                category={item.category}
+                rating={item.rating}
+                imgSrc={item.image}
+              />
+            );
+          })}
+      </div>
+    </main>
   );
 }
 

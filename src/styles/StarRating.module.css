@@ -1,0 +1,11 @@
+.starRating {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.ratingCount {
+  padding-bottom: 2px;
+  padding-left: 8px;
+  font-size: 14px;
+}

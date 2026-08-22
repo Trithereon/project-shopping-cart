@@ -1,5 +1,6 @@
 import styles from "../styles/ItemCard.module.css";
 import { useState } from "react";
+import StarRating from "./StarRating";
 
 function ItemCard({ title, price, description, category, rating, imgSrc }) {
   const [quantity, setQuantity] = useState(0);
@@ -21,18 +22,25 @@ function ItemCard({ title, price, description, category, rating, imgSrc }) {
     else setQuantity(e.target.value);
   }
 
+  function formatCurrency(number) {
+    return new Intl.NumberFormat("en-CA", {
+      style: "currency",
+      currency: "CAD",
+    }).format(number);
+  }
+
   return (
-    <div>
+    <div className={styles.itemCard}>
       <div className={styles.itemImageContainer}>
         <img src={imgSrc} alt={title} />
       </div>
       <div className={styles.itemContent}>
         <h3>{title}</h3>
-        <span>{price}</span>
-        <span>{description}</span>
-        <span>{category}</span>
-        <span>{rating.rate}</span>
-        <span>{rating.count}</span>
+        <span className={styles.price}>{formatCurrency(price)}</span>
+        <span className={styles.description}>{description}</span>
+        {/* TODO: make category clickable, to filter by category */}
+        {/* <span className={styles.category}>Category: {category}</span> */}
+        <StarRating rating={rating.rate} ratingCount={rating.count} />
       </div>
       <div className={styles.itemActions}>
         <input

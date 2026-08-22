@@ -6,7 +6,7 @@
   --footer-bg: #c4dccb;
 
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
-  --heading: Montserrat, system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: "Montserrat", system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 16px/145% var(--sans);
