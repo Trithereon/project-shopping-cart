@@ -32,8 +32,11 @@ body {
   margin: 0 auto;
   text-align: center;
   min-height: 100svh;
-  box-sizing: border-box;
   background-color: var(--header-bg);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 h1,

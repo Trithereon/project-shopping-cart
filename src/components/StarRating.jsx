@@ -5,10 +5,11 @@ function StarRating({ rating, ratingCount, maxStars = 5, size = 20 }) {
   const stars = [];
 
   for (let i = 0; i < maxStars; i++) {
+    // This ensures the last non-empty star in an imperfect score is
+    // partially filled, according to the fillPercent.
+    // e.g. 3.7 is 3 full stars, one 70% full star and one empty star.
     const fillPercent = Math.min(Math.max(rating - i, 0), 1) * 100;
-    stars.push(
-      <Star key={`${i}-star`} fillPercent={fillPercent} size={size} />,
-    );
+    stars.push(<Star key={i} fillPercent={fillPercent} size={size} />);
   }
 
   return (
@@ -34,7 +35,7 @@ function Star({ fillPercent, size }) {
       <path
         d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
         fill="none"
-        stroke="#d1d5db"
+        stroke="#b2b6bb"
         strokeWidth="1"
       />
 

@@ -15,7 +15,7 @@ function Shop() {
 
   return (
     <main>
-      <h2>Shop</h2>
+      <h2 className={styles.topBanner}>Free delivery on orders over 35$</h2>
 
       <div className={styles.itemCardContainer}>
         {items &&
