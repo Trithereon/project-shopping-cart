@@ -15,7 +15,7 @@ function StarRating({ rating, ratingCount, maxStars = 5, size = 20 }) {
   return (
     <div className={styles.starRating}>
       {stars}
-      <span className={styles.ratingCount}>{`(${ratingCount})`}</span>
+      <span className={styles.ratingCount}>{`${rating} (${ratingCount})`}</span>
     </div>
   );
 }

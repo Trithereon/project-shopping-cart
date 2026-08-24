@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/Shop.module.css";
 import ItemCard from "./ItemCard";
+import { Link } from "react-router";
 
-function Shop() {
+function Shop({ itemsInCart, setItemsInCart }) {
   const [items, setItems] = useState(null);
 
   useEffect(() => {
@@ -33,6 +34,9 @@ function Shop() {
             );
           })}
       </div>
+      <Link className={styles.goToCartBtn} to="/cart">
+        GO TO CART
+      </Link>
     </main>
   );
 }

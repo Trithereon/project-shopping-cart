@@ -30,6 +30,18 @@
 ## Cart Page
 
 - Seems straight-forward.
+- itemsInCart template should be:
+
+```js
+[
+  {
+    title: "Eggplant",
+    price: 3.25,
+    image: "https://trithereon.github.io/fake-api/img/eggplant.jpg",
+    count: 4,
+  },
+];
+```
 
 ## Inspiration
 

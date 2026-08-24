@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px 0px;
+  margin-top: 80px;
   width: 100%;
   background: var(--footer-bg);
   text-align: left;

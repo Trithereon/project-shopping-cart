@@ -13,6 +13,7 @@ describe("Header", () => {
           farmName="A Farm Called Quest"
           farmAddress="123 Compton, USA"
           logo="/src/assets/img/logo.png"
+          itemsInCart={[]}
         />
       </MemoryRouter>,
     );
@@ -23,16 +24,34 @@ describe("Header", () => {
       screen.getByText(/123 compton, usa/i, { selector: "address" }),
     ).toBeInTheDocument();
     const img = screen.getByRole("img", { name: /logo/i });
-    const imgPath = new URL(img.src, window.location.origin).pathname;
-    expect(imgPath).toBe("/src/assets/img/logo-bare.png");
-    // TODO: fix this test to avoid implementation detail "logo-bare.png".
+    expect(img).toBeInTheDocument();
+  });
+  it("Displays item count correctly on Cart nav button", () => {
+    const { rerender } = render(
+      <MemoryRouter>
+        <Header itemsInCart={[]}></Header>
+      </MemoryRouter>,
+    );
+    const count = screen.getByTestId("itemCount");
+    expect(count.textContent).toBe("");
+    rerender(
+      <MemoryRouter>
+        <Header itemsInCart={[{}, {}, {}]}></Header>
+      </MemoryRouter>,
+    );
+    expect(count.textContent).toBe("3");
   });
 });
 
 describe("Shop", () => {
-  it("Images load correctly", () => {
-    render(<Shop />);
-    expect(screen.getByRole("img", { name: "eggs" })).toBeInTheDocument();
-    // TODO: fix this test to avoid implementation detail "eggs".
+  it("Images load correctly", async () => {
+    render(
+      <MemoryRouter>
+        <Shop />
+      </MemoryRouter>,
+    );
+    expect(
+      await screen.findByRole("img", { name: "Farm Fresh Eggs - Dozen" }),
+    ).toBeInTheDocument();
   });
 });

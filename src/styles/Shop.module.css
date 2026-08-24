@@ -8,3 +8,20 @@
   background-color: #b9df95;
   padding: 6px 0;
 }
+
+.goToCartBtn {
+  width: 210px;
+  height: 80px;
+  font-size: 20px;
+  padding: 16px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #976945;
+  border: none;
+  color: var(--header-bg);
+  text-decoration: none;
+}
+
+.goToCartBtn:hover {
+  background-color: #945c31;
+}

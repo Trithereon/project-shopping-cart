@@ -8,6 +8,7 @@ function Header({
   farmName = "Ressources de la Vallée",
   farmAddress = "Sainte-Anne-de-la-Rochelle, QC",
   logoSrc = logo,
+  itemsInCart,
 }) {
   const location = useLocation().pathname;
 
@@ -38,13 +39,16 @@ function Header({
               Shop
             </Link>
           </li>
-          <li>
+          <li className={styles.cartListItem}>
             <Link
               to="/cart"
               className={`${styles.navButton} ${location === "/cart" ? styles.selected : ""}`}
             >
               Cart
             </Link>
+            <div data-testid="itemCount" className={styles.itemCount}>
+              {itemsInCart.length > 0 ? itemsInCart.length : ""}
+            </div>
           </li>
         </ul>
       </nav>
