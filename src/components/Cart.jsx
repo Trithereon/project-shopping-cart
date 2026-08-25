@@ -32,7 +32,7 @@ function CartContent() {
 
   return (
     <>
-      <table className="cart">
+      <table className={styles.cartContent}>
         <thead>
           <tr>
             <th>Product</th>

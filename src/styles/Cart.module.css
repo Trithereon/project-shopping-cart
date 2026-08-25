@@ -1,6 +1,16 @@
+.cartContainer {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 .cartTitleLine {
   display: flex;
   justify-content: space-between;
+}
+
+.cartContent {
+  justify-self: center;
+  margin: 40px;
 }
 
 .shop {

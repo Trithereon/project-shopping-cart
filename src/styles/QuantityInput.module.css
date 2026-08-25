@@ -1,0 +1,44 @@
+.itemActions {
+  display: grid;
+  grid-template-columns: 40px 24px;
+  grid-template-areas:
+    "count plus"
+    "count minus";
+  gap: 1px 10px;
+  justify-content: start;
+  width: 100%;
+}
+
+/* To remove spinners, arrows, from the number input.*/
+/* Chrome, Edge, Safari, Opera */
+.count::-webkit-outer-spin-button,
+::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+.count {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.count {
+  grid-area: count;
+  width: 40px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.plus,
+.minus {
+  width: 24px;
+}
+
+.plus {
+  grid-area: plus;
+}
+
+.minus {
+  grid-area: minus;
+}
