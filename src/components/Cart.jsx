@@ -11,7 +11,9 @@ function Cart() {
   return (
     <main>
       <div className={styles.cartContainer}>
-        <div className={styles.cartTitleLine}>
+        <div
+          className={`${styles.cartTitleLine} ${itemsInCart.length === 0 ? styles.empty : ""}`}
+        >
           <h2>Your cart {itemsInCart.length > 0 ? "" : "is empty."}</h2>
           <Link className={styles.shop} to="/shop">
             <h3>Continue shopping</h3>
@@ -30,6 +32,12 @@ function CartContent() {
     0,
   );
 
+  function handleCheckout() {
+    alert(
+      `Thank you for shopping with us!\nWe appreciate your business.\nThe checkout process is not yet implemented, so please give us a call instead.`,
+    );
+  }
+
   return (
     <>
       <table className={styles.cartContent}>
@@ -47,9 +55,16 @@ function CartContent() {
         </tbody>
       </table>
       <div className={styles.cartFooter}>
-        <div className={styles.cartBlocks}>
+        <div className={styles.cartFooterContent}>
           <h3>Subtotal</h3>
-          <p>{formatCurrency(subtotal)}</p>
+          <p className={styles.subtotal}>{formatCurrency(subtotal)}</p>
+          <small>Taxes and shipping calculated at checkout</small>
+          <button
+            onClick={handleCheckout}
+            className={`${styles.shop} ${styles.checkOut}`}
+          >
+            Check out
+          </button>
         </div>
       </div>
     </>

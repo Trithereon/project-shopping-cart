@@ -1,9 +1,11 @@
 import styles from "../styles/QuantityInput.module.css";
 import { useState, useContext } from "react";
 import { CartContext } from "../App";
+import trash from "../assets/img/cart/trash.svg";
 
 function QuantityInput({ item }) {
-  const { itemsInCart, addToCart, updateItemCount } = useContext(CartContext);
+  const { itemsInCart, updateItemCount, deleteFromCart } =
+    useContext(CartContext);
   const cartIndex = itemsInCart.findIndex(
     (product) => product.title === item.title,
   );
@@ -20,11 +22,14 @@ function QuantityInput({ item }) {
   }
 
   function handleChange(e) {
-    // TODO: fix logic. Might need a new App-level function to set value.
     // TODO: sanitize better; force number input.
     if (e.target.value > 99) updateItemCount(item, 99);
     else if (e.target.value < 1) updateItemCount(item, 1);
     else updateItemCount(item, e.target.value);
+  }
+
+  function handleDelete() {
+    deleteFromCart(item);
   }
 
   return (
@@ -44,6 +49,9 @@ function QuantityInput({ item }) {
       </button>
       <button className={styles.minus} onClick={handleMinus}>
         -
+      </button>
+      <button onClick={handleDelete} className={styles.deleteBtn}>
+        <img className={styles.deleteImg} src={trash} alt="delete" />
       </button>
     </div>
   );

@@ -8,6 +8,7 @@ export const CartContext = createContext({
   itemsInCart: [],
   addToCart: () => {},
   updateItemCount: () => {},
+  deleteFromCart: () => {},
 });
 
 function App() {
@@ -27,7 +28,6 @@ function App() {
             : item,
         ),
       );
-    return;
   };
 
   const updateItemCount = (product, newCount) => {
@@ -39,12 +39,21 @@ function App() {
         index === cartIndex ? { ...item, count: newCount } : item,
       ),
     );
+  };
 
-    return;
+  const deleteFromCart = (product) => {
+    const cartIndex = itemsInCart.findIndex(
+      (item) => item.title === product.title,
+    );
+    setItemsInCart((prevItems) =>
+      prevItems.filter((_, index) => (index === cartIndex ? false : true)),
+    );
   };
 
   return (
-    <CartContext value={{ itemsInCart, addToCart, updateItemCount }}>
+    <CartContext
+      value={{ itemsInCart, addToCart, updateItemCount, deleteFromCart }}
+    >
       <Header />
       <Outlet />
       <Footer />

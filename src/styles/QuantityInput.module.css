@@ -1,9 +1,9 @@
 .itemActions {
   display: grid;
-  grid-template-columns: 40px 24px;
+  grid-template-columns: 40px 24px 26px;
   grid-template-areas:
-    "count plus"
-    "count minus";
+    "count plus delete"
+    "count minus delete";
   gap: 1px 10px;
   justify-content: start;
   width: 100%;
@@ -41,4 +41,17 @@
 
 .minus {
   grid-area: minus;
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin: 6px 0;
+  grid-area: delete;
+}
+
+.deleteImg {
+  width: 18px;
 }

@@ -7,6 +7,11 @@
   display: flex;
   justify-content: space-between;
 }
+.empty {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .cartContent {
   justify-self: center;
@@ -26,4 +31,26 @@
 .shop:hover {
   background-color: var(--text);
   color: var(--header-bg);
+}
+
+.cartFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cartFooterContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.subtotal {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.checkOut {
+  padding: 12px;
+  font-size: 1.2em;
 }
