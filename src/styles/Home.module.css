@@ -86,6 +86,8 @@
 .shopBtn {
   cursor: pointer;
   background-color: #976945;
+  border-radius: 8px;
+  text-decoration-line: none;
   border: none;
   color: var(--header-bg);
   font-size: 20px;

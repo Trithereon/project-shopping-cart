@@ -3,6 +3,7 @@ import ImgCarousel from "../components/ImgCarousel.jsx";
 import mesclun from "../assets/img/shop/mesclun-mix.jpg";
 import strawberries from "../assets/img/shop/strawberries.jpg";
 import eggs from "../assets/img/shop/eggs.jpg";
+import { Link } from "react-router";
 
 function Home() {
   // Import folder of images
@@ -19,6 +20,8 @@ function Home() {
       etc.
     }
   */
+
+  function goToShop() {}
 
   return (
     <main>
@@ -53,12 +56,9 @@ function Home() {
               Deliveries are made every Monday from 5PM to 8PM.
             </h3>
           </div>
-          <button
-            className={styles.shopBtn}
-            onClick={() => alert("Clicked Order Now!")}
-          >
+          <Link className={styles.shopBtn} to="/shop">
             Order Now
-          </button>
+          </Link>
         </div>
         <div className={styles.arrowLeft}></div>
       </div>

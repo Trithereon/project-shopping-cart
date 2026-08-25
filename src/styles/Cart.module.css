@@ -19,6 +19,7 @@
 }
 
 .shop {
+  border: 1px solid gray;
   border-radius: 6px;
   color: var(--text);
   text-decoration-line: none;
@@ -52,5 +53,8 @@
 
 .checkOut {
   padding: 12px;
+  background-color: var(--header-bg);
   font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
 }

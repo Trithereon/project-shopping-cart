@@ -1,0 +1,42 @@
+.cartAlert {
+  position: fixed;
+  background: var(--header-bg);
+  border-radius: 12px;
+  padding: 10px;
+  border: solid 1px lightgray;
+  right: 0;
+}
+
+.titleLine {
+  display: flex;
+  justify-content: space-between;
+}
+
+.xBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.xImg {
+  width: 18px;
+}
+
+.viewCartBtn {
+  display: block;
+  margin: 0 30%;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  border: gray solid 1px;
+  border-radius: 8px;
+  padding: 8px 12px;
+  transition:
+    color 1s,
+    background-color 800ms;
+}
+
+.viewCartBtn:hover {
+  color: var(--header-bg);
+  background-color: var(--text);
+}

@@ -4,18 +4,25 @@ import StarRating from "./StarRating";
 import { CartContext } from "../App";
 import { formatCurrency } from "../utils/utils.jsx";
 
-function ItemCard({ title, price, description, category, rating, imgSrc }) {
+function ItemCard({
+  title,
+  price,
+  description,
+  category,
+  rating,
+  imgSrc,
+  isAlerted,
+  setIsAlerted,
+}) {
   const [count, setCount] = useState(0);
   const { addToCart } = useContext(CartContext);
 
   function handlePlus() {
     if (count < 99) setCount((prev) => prev + 1);
-    return;
   }
 
   function handleMinus() {
     if (count > 0) setCount((prev) => prev - 1);
-    return;
   }
 
   function handleChange(e) {
@@ -23,6 +30,21 @@ function ItemCard({ title, price, description, category, rating, imgSrc }) {
     if (e.target.value > 99) setCount(99);
     else if (e.target.value < 0) setCount(0);
     else setCount(e.target.value);
+  }
+
+  function handleAddToCart() {
+    // 1. addToCart()
+    // 2. setIsAlerted(true)
+    // 3. disable addToCart button
+    // 4. set value of count input back to 0
+    addToCart({
+      title: title,
+      price: price,
+      image: imgSrc,
+      count: count,
+    });
+    setIsAlerted(true);
+    setCount(0);
   }
 
   return (
@@ -58,14 +80,7 @@ function ItemCard({ title, price, description, category, rating, imgSrc }) {
         <button
           className={styles.addToCart}
           disabled={count === 0 ? true : false}
-          onClick={() =>
-            addToCart({
-              title: title,
-              price: price,
-              image: imgSrc,
-              count: count,
-            })
-          }
+          onClick={handleAddToCart}
         >
           Add to cart
         </button>

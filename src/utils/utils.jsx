@@ -5,6 +5,4 @@ function formatCurrency(number) {
   }).format(number);
 }
 
-function incrementItem(item) {}
-
 export { formatCurrency };

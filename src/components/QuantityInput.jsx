@@ -1,11 +1,13 @@
 import styles from "../styles/QuantityInput.module.css";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { CartContext } from "../App";
 import trash from "../assets/img/cart/trash.svg";
+import { ShopContext } from "./Shop";
 
 function QuantityInput({ item }) {
   const { itemsInCart, updateItemCount, deleteFromCart } =
     useContext(CartContext);
+  const { isAlerted, setIsAlerted } = useContext(ShopContext);
   const cartIndex = itemsInCart.findIndex(
     (product) => product.title === item.title,
   );
@@ -29,6 +31,7 @@ function QuantityInput({ item }) {
   }
 
   function handleDelete() {
+    setIsAlerted(false);
     deleteFromCart(item);
   }
 

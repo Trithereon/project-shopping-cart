@@ -1,6 +1,5 @@
 import styles from "../styles/Footer.module.css";
 import quebecFlag from "../assets/img/flag-quebec.svg";
-import githubWhite from "../assets/img/GitHub_Invertocat_White.svg";
 import githubBlack from "../assets/img/GitHub_Invertocat_Black.svg";
 import FooterLinkList from "./FooterLinkList";
 import { aboutUsLinks, socialLinks } from "../assets/data/footer-data";
