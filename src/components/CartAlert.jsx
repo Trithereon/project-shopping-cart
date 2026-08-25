@@ -30,7 +30,9 @@ function CartAlert() {
         </button>
       </div>
       <table>
-        <CartItem item={latestItem} alert={true} />
+        <tbody>
+          <CartItem item={latestItem} />
+        </tbody>
       </table>
       <Link
         className={styles.viewCartBtn}

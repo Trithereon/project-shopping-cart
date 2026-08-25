@@ -43,9 +43,9 @@ function CartContent() {
       <table className={styles.cartContent}>
         <thead>
           <tr>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Total</th>
+            <th className={styles.header}>Product</th>
+            <th className={styles.header}>Quantity</th>
+            <th className={styles.header}>Total</th>
           </tr>
         </thead>
         <tbody>

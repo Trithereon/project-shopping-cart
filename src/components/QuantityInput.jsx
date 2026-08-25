@@ -7,7 +7,7 @@ import { ShopContext } from "./Shop";
 function QuantityInput({ item }) {
   const { itemsInCart, updateItemCount, deleteFromCart } =
     useContext(CartContext);
-  const { isAlerted, setIsAlerted } = useContext(ShopContext);
+  const { setIsAlerted } = useContext(ShopContext);
   const cartIndex = itemsInCart.findIndex(
     (product) => product.title === item.title,
   );
