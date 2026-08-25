@@ -1,36 +1,32 @@
 import styles from "../styles/ItemCard.module.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import StarRating from "./StarRating";
+import { CartContext } from "../App";
+import { formatCurrency } from "../utils/utils.jsx";
 
 function ItemCard({ title, price, description, category, rating, imgSrc }) {
-  const [quantity, setQuantity] = useState(0);
+  const [count, setCount] = useState(0);
+  const { addToCart } = useContext(CartContext);
 
   function handlePlus() {
-    if (quantity < 99) setQuantity((prev) => prev + 1);
+    if (count < 99) setCount((prev) => prev + 1);
     return;
   }
 
   function handleMinus() {
-    if (quantity > 0) setQuantity((prev) => prev - 1);
+    if (count > 0) setCount((prev) => prev - 1);
     return;
   }
 
   function handleChange(e) {
-    // TODO: sanitize better. Force number input.
-    if (e.target.value > 99) setQuantity(99);
-    else if (e.target.value < 0) setQuantity(0);
-    else setQuantity(e.target.value);
-  }
-
-  function formatCurrency(number) {
-    return new Intl.NumberFormat("en-CA", {
-      style: "currency",
-      currency: "CAD",
-    }).format(number);
+    // TODO: sanitize better; force number input.
+    if (e.target.value > 99) setCount(99);
+    else if (e.target.value < 0) setCount(0);
+    else setCount(e.target.value);
   }
 
   return (
-    <div className={styles.itemCard}>
+    <div className={styles.itemCard} data-testid="item-card">
       <div className={styles.itemImageContainer}>
         <img src={imgSrc} alt={title} />
       </div>
@@ -44,14 +40,14 @@ function ItemCard({ title, price, description, category, rating, imgSrc }) {
       </div>
       <div className={styles.itemActions}>
         <input
-          className={styles.quantity}
-          id={`${title}-quantity`}
+          className={styles.count}
+          id={`${title}-count`}
           type="number"
           min="0"
           max="99"
           onWheel={(e) => e.currentTarget.blur()}
           onChange={handleChange}
-          value={quantity}
+          value={count}
         />
         <button className={styles.plus} onClick={handlePlus}>
           +
@@ -59,7 +55,20 @@ function ItemCard({ title, price, description, category, rating, imgSrc }) {
         <button className={styles.minus} onClick={handleMinus}>
           -
         </button>
-        <button className={styles.addToCart}>Add to cart</button>
+        <button
+          className={styles.addToCart}
+          disabled={count === 0 ? true : false}
+          onClick={() =>
+            addToCart({
+              title: title,
+              price: price,
+              image: imgSrc,
+              count: count,
+            })
+          }
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   );

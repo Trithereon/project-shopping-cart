@@ -48,8 +48,8 @@
   display: grid;
   grid-template-columns: 40px 24px 1fr;
   grid-template-areas:
-    "quantity plus addToCart"
-    "quantity minus addToCart";
+    "count plus addToCart"
+    "count minus addToCart";
   gap: 1px 10px;
   justify-content: start;
   width: 100%;
@@ -57,19 +57,19 @@
 
 /* To remove spinners, arrows, from the number input.*/
 /* Chrome, Edge, Safari, Opera */
-.quantity::-webkit-outer-spin-button,
+.count::-webkit-outer-spin-button,
 ::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 /* Firefox */
-.quantity {
+.count {
   -moz-appearance: textfield;
   appearance: textfield;
 }
 
-.quantity {
-  grid-area: quantity;
+.count {
+  grid-area: count;
   width: 40px;
   box-sizing: border-box;
   text-align: center;

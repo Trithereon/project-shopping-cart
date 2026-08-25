@@ -27,6 +27,12 @@
 4. List item cards `<ItemCard>`
 5. Search bar `<SearchBar>`
 
+### addToCart pseudocode
+- If user clicks addToCart with value 0, return.
+- Else if user clicks addToCart, check for presence of item in itemsInCart, 
+  - if item already exists, add the new value to the quantity property of the item, 
+  - else add the full item object to itemsInCart.
+
 ## Cart Page
 
 - Seems straight-forward.

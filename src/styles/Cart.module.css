@@ -1,0 +1,19 @@
+.cartTitleLine {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shop {
+  border-radius: 6px;
+  color: var(--text);
+  text-decoration-line: none;
+  padding: 0 20px;
+  transition:
+    background-color 800ms,
+    color 1s;
+}
+
+.shop:hover {
+  background-color: var(--text);
+  color: var(--header-bg);
+}

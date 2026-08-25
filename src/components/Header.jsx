@@ -1,16 +1,17 @@
 import styles from "../styles/Header.module.css";
 import logo from "../assets/img/logo-bare.png";
 import { Link } from "react-router";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useLocation } from "react-router";
+import { CartContext } from "../App";
 
 function Header({
   farmName = "Ressources de la Vallée",
   farmAddress = "Sainte-Anne-de-la-Rochelle, QC",
   logoSrc = logo,
-  itemsInCart,
 }) {
   const location = useLocation().pathname;
+  const { itemsInCart } = useContext(CartContext);
 
   return (
     <header className={styles.header}>
@@ -46,7 +47,7 @@ function Header({
             >
               Cart
             </Link>
-            <div data-testid="itemCount" className={styles.itemCount}>
+            <div data-testid="item-count" className={styles.itemCount}>
               {itemsInCart.length > 0 ? itemsInCart.length : ""}
             </div>
           </li>
