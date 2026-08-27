@@ -3,6 +3,7 @@ import { getByRole, render, screen, within } from "@testing-library/react";
 import { createMemoryRouter, MemoryRouter, RouterProvider } from "react-router";
 import Shop from "../components/Shop";
 import Header from "../components/Header";
+import HeaderActions from "../components/HeaderActions";
 import App from "../App";
 import { AppContext } from "../App";
 import { useContext } from "react";
@@ -34,7 +35,7 @@ describe("Header", () => {
     const { rerender } = render(
       <MemoryRouter>
         <AppContext value={{ itemsInCart: [] }}>
-          <Header />
+          <HeaderActions />
         </AppContext>
       </MemoryRouter>,
     );
@@ -43,7 +44,7 @@ describe("Header", () => {
     rerender(
       <MemoryRouter>
         <AppContext value={{ itemsInCart: [{}, {}, {}] }}>
-          <Header />
+          <HeaderActions />
         </AppContext>
       </MemoryRouter>,
     );
