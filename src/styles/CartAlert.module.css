@@ -48,3 +48,10 @@
   color: var(--header-bg);
   background-color: var(--text);
 }
+
+/* Mobile version */
+@media (max-width: 640px) {
+  .viewCartBtn {
+    margin: auto;
+  }
+}

@@ -20,3 +20,12 @@
   object-fit: cover;
   border-radius: 8px;
 }
+
+/* Mobile version */
+@media (max-width: 640px) {
+  .details,
+  .countCell,
+  .total {
+    padding: 0;
+  }
+}

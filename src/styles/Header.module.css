@@ -79,7 +79,8 @@
   text-underline-offset: 8px;
 }
 
-@media (max-width: 600px) {
+/* Mobile version */
+@media (max-width: 640px) {
   .header {
     justify-content: center;
   }
