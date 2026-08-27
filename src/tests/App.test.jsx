@@ -4,7 +4,7 @@ import { createMemoryRouter, MemoryRouter, RouterProvider } from "react-router";
 import Shop from "../components/Shop";
 import Header from "../components/Header";
 import App from "../App";
-import { CartContext } from "../App";
+import { AppContext } from "../App";
 import { useContext } from "react";
 import userEvent from "@testing-library/user-event";
 
@@ -33,18 +33,18 @@ describe("Header", () => {
   it("Displays item count correctly on Cart nav button", () => {
     const { rerender } = render(
       <MemoryRouter>
-        <CartContext value={{ itemsInCart: [] }}>
+        <AppContext value={{ itemsInCart: [] }}>
           <Header />
-        </CartContext>
+        </AppContext>
       </MemoryRouter>,
     );
     const count = screen.getByTestId("item-count");
     expect(count.textContent).toBe("");
     rerender(
       <MemoryRouter>
-        <CartContext value={{ itemsInCart: [{}, {}, {}] }}>
+        <AppContext value={{ itemsInCart: [{}, {}, {}] }}>
           <Header />
-        </CartContext>
+        </AppContext>
       </MemoryRouter>,
     );
     expect(count.textContent).toBe("3");

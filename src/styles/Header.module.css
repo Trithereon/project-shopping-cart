@@ -1,19 +1,22 @@
-.header {
+:root {
   --btn-text: #976945;
   --logo-height: 100px;
+}
 
+.header {
   display: flex;
   flex-wrap: wrap;
   background: var(--header-bg);
   min-height: var(--logo-height);
   width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+}
+
+.headerLogo {
+  max-height: var(--logo-height);
 }
 
 .headerLogo img {
-  max-height: var(--logo-height);
+  max-height: inherit;
 }
 
 .headerTitle {
@@ -32,16 +35,22 @@
 }
 
 .headerActions {
-  align-self: center;
+  background: var(--header-bg);
   margin-left: auto;
-  margin-right: 30px;
+  padding-right: 30px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 .headerActions ul {
   display: flex;
   list-style: none;
   gap: 16px;
-  height: inherit;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .navButton {

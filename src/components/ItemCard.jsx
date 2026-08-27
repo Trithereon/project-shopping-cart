@@ -1,7 +1,7 @@
 import styles from "../styles/ItemCard.module.css";
 import { useState, useContext } from "react";
 import StarRating from "./StarRating";
-import { CartContext } from "../App";
+import { AppContext } from "../App";
 import { formatCurrency } from "../utils/utils.jsx";
 
 function ItemCard({
@@ -15,7 +15,7 @@ function ItemCard({
   setIsAlerted,
 }) {
   const [count, setCount] = useState(0);
-  const { addToCart } = useContext(CartContext);
+  const { itemsInCart, addToCart, setLatestItem } = useContext(AppContext);
 
   function handlePlus() {
     if (count < 99) setCount((prev) => prev + 1);
@@ -35,14 +35,15 @@ function ItemCard({
   function handleAddToCart() {
     // 1. addToCart()
     // 2. setIsAlerted(true)
-    // 3. disable addToCart button
+    // 3. disable addToCart button (4. does it)
     // 4. set value of count input back to 0
-    addToCart({
+    const product = addToCart({
       title: title,
       price: price,
       image: imgSrc,
       count: count,
     });
+    setLatestItem(product);
     setIsAlerted(true);
     setCount(0);
   }

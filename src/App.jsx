@@ -1,9 +1,10 @@
 import Header from "./components/Header";
+import HeaderActions from "./components/HeaderActions";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router";
 import { useState, createContext } from "react";
 
-export const CartContext = createContext({
+export const AppContext = createContext({
   itemsInCart: [],
   addToCart: () => {},
   updateItemCount: () => {},
@@ -12,14 +13,16 @@ export const CartContext = createContext({
 
 function App() {
   const [itemsInCart, setItemsInCart] = useState([]);
+  const [latestItem, setLatestItem] = useState(null);
 
   const addToCart = (product) => {
-    // First check whether item already exists in cart, if so, add to its count.
     const cartIndex = itemsInCart.findIndex(
       (item) => item.title === product.title,
     ); // Returns -1 if not found.
+    // If not found, add new item to cart.
     if (cartIndex === -1) setItemsInCart([...itemsInCart, product]);
     else
+      // If item already exists in cart, only add to its count.
       setItemsInCart((prevItems) =>
         prevItems.map((item, index) =>
           index === cartIndex
@@ -27,6 +30,7 @@ function App() {
             : item,
         ),
       );
+    return product;
   };
 
   const updateItemCount = (product, newCount) => {
@@ -50,13 +54,21 @@ function App() {
   };
 
   return (
-    <CartContext
-      value={{ itemsInCart, addToCart, updateItemCount, deleteFromCart }}
+    <AppContext
+      value={{
+        itemsInCart,
+        addToCart,
+        updateItemCount,
+        deleteFromCart,
+        latestItem,
+        setLatestItem,
+      }}
     >
       <Header />
+      <HeaderActions />
       <Outlet />
       <Footer />
-    </CartContext>
+    </AppContext>
   );
 }
 

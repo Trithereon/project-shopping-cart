@@ -1,5 +1,5 @@
 import styles from "../styles/CartAlert.module.css";
-import { CartContext } from "../App";
+import { AppContext } from "../App";
 import { ShopContext } from "./Shop";
 import { useContext } from "react";
 import CartItem from "./CartItem";
@@ -13,8 +13,7 @@ import x from "../assets/img/x.svg";
 */
 
 function CartAlert() {
-  const { itemsInCart } = useContext(CartContext);
-  const latestItem = itemsInCart[itemsInCart.length - 1];
+  const { itemsInCart, latestItem } = useContext(AppContext);
   const { setIsAlerted } = useContext(ShopContext);
 
   function handleClose() {

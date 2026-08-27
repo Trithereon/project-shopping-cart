@@ -1,18 +1,11 @@
 import styles from "../styles/Header.module.css";
 import logo from "../assets/img/logo-bare.png";
-import { Link } from "react-router";
-import { useState, useContext } from "react";
-import { useLocation } from "react-router";
-import { CartContext } from "../App";
 
 function Header({
   farmName = "Ressources de la Vallée",
   farmAddress = "Sainte-Anne-de-la-Rochelle, QC",
   logoSrc = logo,
 }) {
-  const location = useLocation().pathname;
-  const { itemsInCart } = useContext(CartContext);
-
   return (
     <header className={styles.header}>
       <div className={styles.headerLogo}>
@@ -22,37 +15,6 @@ function Header({
         <h1>{farmName}</h1>
         <address>{farmAddress}</address>
       </div>
-      <nav className={styles.headerActions}>
-        <ul>
-          <li>
-            <Link
-              to="/"
-              className={`${styles.navButton} ${location === "/" ? styles.selected : ""}`}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/shop"
-              className={`${styles.navButton} ${location === "/shop" ? styles.selected : ""}`}
-            >
-              Shop
-            </Link>
-          </li>
-          <li className={styles.cartListItem}>
-            <Link
-              to="/cart"
-              className={`${styles.navButton} ${location === "/cart" ? styles.selected : ""}`}
-            >
-              Cart
-            </Link>
-            <div data-testid="item-count" className={styles.itemCount}>
-              {itemsInCart.length > 0 ? itemsInCart.length : ""}
-            </div>
-          </li>
-        </ul>
-      </nav>
     </header>
   );
 }

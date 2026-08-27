@@ -1,4 +1,4 @@
-import { CartContext } from "../App";
+import { AppContext } from "../App";
 import { useContext } from "react";
 import { Link } from "react-router";
 import styles from "../styles/Cart.module.css";
@@ -6,7 +6,7 @@ import CartItem from "./CartItem";
 import { formatCurrency } from "../utils/utils.jsx";
 
 function Cart() {
-  const { itemsInCart, addToCart } = useContext(CartContext);
+  const { itemsInCart, addToCart } = useContext(AppContext);
 
   return (
     <main>
@@ -26,7 +26,7 @@ function Cart() {
 }
 
 function CartContent() {
-  const { itemsInCart, addToCart } = useContext(CartContext);
+  const { itemsInCart, addToCart } = useContext(AppContext);
   const subtotal = itemsInCart.reduce(
     (acc, item) => item.price * item.count + acc,
     0,
