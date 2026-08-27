@@ -16,7 +16,7 @@
 
 .cartContent {
   justify-self: center;
-  margin: 40px;
+  margin: 40px auto 20px;
   padding: 12px;
   background-color: rgb(222, 229, 218);
   border-radius: 8px;

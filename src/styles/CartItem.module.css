@@ -12,6 +12,7 @@
 .title {
   margin: 0 20px;
   flex-wrap: wrap;
+  text-align: left;
 }
 
 .image {
@@ -26,6 +27,14 @@
   .details,
   .countCell,
   .total {
-    padding: 0;
+    padding: 8px 0;
+  }
+  .title {
+    font-size: 12px;
+    margin: 0 6px;
+  }
+  .image {
+    width: 45px;
+    height: 45px;
   }
 }

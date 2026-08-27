@@ -52,9 +52,13 @@ function Footer() {
       <div className={styles.lineDivider}></div>
 
       <div className={styles.copyright}>
-        <span>2026 © Ressources de la Vallée - Site web conçu au Québec </span>
-        <img className={styles.flag} src={quebecFlag} alt="flag of Québec" />
-        <span className={styles.githubLink}>
+        <div>2026 © Ressources de la Vallée - Site web conçu au</div>
+        <div className={styles.country}>
+          <img className={styles.flag} src={quebecFlag} alt="flag of Québec" />
+          Québec
+        </div>
+
+        <div className={styles.githubLink}>
           par
           <a className={styles.githubLink} href="https://github.com/Trithereon">
             Eliott Bourassa{" "}
@@ -64,7 +68,7 @@ function Footer() {
               alt="Github logo"
             />
           </a>
-        </span>
+        </div>
       </div>
     </footer>
   );

@@ -53,3 +53,10 @@ p {
 main {
   margin-top: 0.83em;
 }
+
+header,
+main,
+footer {
+  padding-left: 4px;
+  padding-right: 4px;
+}
