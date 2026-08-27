@@ -14,13 +14,11 @@ function QuantityInput({ item }) {
   const itemCount = itemsInCart[cartIndex].count;
 
   function handlePlus() {
-    if (itemCount < 99) updateItemCount(item, item.count + 1);
-    return;
+    if (itemCount < 99) updateItemCount(item, itemCount + 1);
   }
 
   function handleMinus() {
-    if (itemCount > 1) updateItemCount(item, item.count - 1);
-    return;
+    if (itemCount > 1) updateItemCount(item, itemCount - 1);
   }
 
   function handleChange(e) {

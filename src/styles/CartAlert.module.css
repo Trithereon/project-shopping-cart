@@ -1,10 +1,18 @@
+.cartAlertAnchor {
+  position: sticky;
+  top: var(--header-actions-height, 48.038px);
+  height: 0;
+  right: 0;
+}
 .cartAlert {
-  position: fixed;
+  position: absolute;
   background: var(--header-bg);
   border-radius: 12px;
   padding: 10px;
   border: solid 1px lightgray;
   right: 0;
+  top: 0;
+  z-index: 10;
 }
 
 .titleLine {

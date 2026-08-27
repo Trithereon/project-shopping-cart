@@ -21,8 +21,6 @@ function Home() {
     }
   */
 
-  function goToShop() {}
-
   return (
     <main>
       <div className={styles.hero}>

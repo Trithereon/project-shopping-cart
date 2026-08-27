@@ -1,9 +1,16 @@
 import { formatCurrency } from "../utils/utils";
 import styles from "../styles/CartItem.module.css";
 import QuantityInput from "./QuantityInput";
+import { useContext } from "react";
+import { AppContext } from "../App";
 
 function CartItem({ item }) {
-  const total = Number(item.count) * Number(item.price);
+  const { itemsInCart } = useContext(AppContext);
+  const cartIndex = itemsInCart.findIndex(
+    (product) => product.title === item.title,
+  );
+  const itemCount = itemsInCart[cartIndex].count;
+  const total = itemCount * item.price;
 
   return (
     <tr>

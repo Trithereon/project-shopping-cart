@@ -21,22 +21,24 @@ function CartAlert() {
   }
 
   return (
-    <div className={styles.cartAlert}>
-      <div className={styles.titleLine}>
-        <p>✔ Item added to your cart</p>
-        <button className={styles.xBtn} onClick={handleClose}>
-          <img className={styles.xImg} src={x} alt="close" />
-        </button>
+    <div className={styles.cartAlertAnchor}>
+      <div className={styles.cartAlert}>
+        <div className={styles.titleLine}>
+          <p>✔ Item added to your cart</p>
+          <button className={styles.xBtn} onClick={handleClose}>
+            <img className={styles.xImg} src={x} alt="close" />
+          </button>
+        </div>
+        <table>
+          <tbody>
+            <CartItem item={latestItem} />
+          </tbody>
+        </table>
+        <Link
+          className={styles.viewCartBtn}
+          to="/cart"
+        >{`View your cart (${itemsInCart.length} item${itemsInCart.length > 1 ? "s" : ""})`}</Link>
       </div>
-      <table>
-        <tbody>
-          <CartItem item={latestItem} />
-        </tbody>
-      </table>
-      <Link
-        className={styles.viewCartBtn}
-        to="/cart"
-      >{`View your cart (${itemsInCart.length} item${itemsInCart.length > 1 ? "s" : ""})`}</Link>
     </div>
   );
 }

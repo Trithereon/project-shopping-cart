@@ -4,9 +4,11 @@
   --header-bg: #f9fcf1;
   --bg: #fffff0;
   --footer-bg: #c4dccb;
+  /* at 20px font-size, actual box height is 24.045px, then there are 0.75rem margins top and bottom */
+  --header-actions-height: calc(24.045px + 1.5rem);
 
-  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
-  --heading: "Montserrat", system-ui, "Segoe UI", Roboto, sans-serif;
+  --sans: Roboto, system-ui, sans-serif;
+  --heading: Montserrat, Roboto, system-ui, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 16px/145% var(--sans);
@@ -46,4 +48,8 @@ h2 {
 }
 p {
   margin: 0;
+}
+
+main {
+  margin-top: 0.83em;
 }
