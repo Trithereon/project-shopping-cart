@@ -49,7 +49,7 @@ function ItemCard({
   }
 
   return (
-    <div className={styles.itemCard} data-testid="item-card">
+    <article className={styles.itemCard} data-testid="item-card">
       <div className={styles.itemImageContainer}>
         <img src={imgSrc} alt={title} />
       </div>
@@ -86,7 +86,7 @@ function ItemCard({
           Add to cart
         </button>
       </div>
-    </div>
+    </article>
   );
 }
 
