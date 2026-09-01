@@ -1,13 +1,13 @@
 import styles from "../styles/Home.module.css";
 import ImgCarousel from "../components/ImgCarousel.jsx";
-import mesclun from "../assets/img/shop/mesclun-mix.jpg";
-import strawberries from "../assets/img/shop/strawberries.jpg";
-import eggs from "../assets/img/shop/eggs.jpg";
+import mesclun from "../assets/img/shop/mesclun-mix.webp";
+import strawberries from "../assets/img/shop/strawberries.webp";
+import eggs from "../assets/img/shop/eggs.webp";
 import { Link } from "react-router";
 
 function Home() {
   // Import folder of images
-  const images = import.meta.glob("../assets/img/hero/*.{png,jpg}", {
+  const images = import.meta.glob("../assets/img/hero/*.{png,jpg,webp}", {
     eager: true,
     import: "default",
   });

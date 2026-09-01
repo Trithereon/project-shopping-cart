@@ -1,5 +1,5 @@
 import styles from "../styles/Header.module.css";
-import logo from "../assets/img/logo-bare.png";
+import logo from "../assets/img/logo-bare.webp";
 
 function Header({
   farmName = "Ressources de la Vallée",
